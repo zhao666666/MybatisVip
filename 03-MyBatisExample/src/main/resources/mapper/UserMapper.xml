@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.boge.mapper.UserMapper">
-
+    <!--是否开启二级缓存-->
     <cache />
 
   <resultMap id="BaseResultMap" type="user" >
@@ -30,7 +30,7 @@
     </select>
 
 
-  <!-- $只能用在自定义类型和map上 -->
+  <!-- $只能用在自定义类型和map上 useCache="true" 默认使用-->
   <select id="selectUserByBean"  parameterType="user" resultType="user"  >
         select * from t_user where user_name = '${userName}'
     </select>

@@ -24,13 +24,22 @@
     </settings>
 
 
+    <!--别名-->
     <typeAliases>
         <!--<typeAlias alias="user" type="com.boge.User" />-->
         <package name="com.boge.pojo"/>
+<!--        <typeAlias alias="user" type="com.boge.domain.User" />-->
     </typeAliases>
-    
+
+    <!--类型转换java-> mybatis -> mysql -->
+    <!--    <typeHandlers>-->
+    <!--        <typeHandler handler="com.boge.type.MyTypeHandler"></typeHandler>-->
+    <!--    </typeHandlers>-->
+
+    <!--创建对象,使用自定义的工厂-->
     <objectFactory type="com.boge.factory.MyObjectFactory"></objectFactory>
 
+    <!--插件-->
     <plugins>
         <plugin interceptor="com.boge.interceptor.MyInterceptor">
             <property name="interceptorName" value="aaaaa"/>
@@ -62,6 +71,7 @@
         </plugin>
     </plugins>
 
+    <!--环境配置-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
